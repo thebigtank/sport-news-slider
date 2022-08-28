@@ -1,0 +1,209 @@
+$font-poppins: 'Poppins', sans-serif;
+
+.block.carousel {
+    height: 500px;
+    position: relative;
+    margin-top: 96px;
+    padding: 70px 0;
+    box-sizing: border-box;
+    background-color: #131313;
+    color: #fff;
+    font-family: $font-poppins;
+    overflow: hidden;
+
+    .wrapper {
+        position: relative;
+        max-width: 1200px;
+        padding: 0 40px;
+        margin: 0 auto;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 34px;
+        // &:nth-child(1) {
+        //     justify-content: space-between;
+        // }
+    }
+
+    .col {
+        flex: 1;
+        &.dual {
+            display: flex;
+            gap: 40px;
+            width: 600px;
+        }
+
+        &.single {
+            padding-left: 40px;
+        }
+        
+    }
+
+    .carousel__header {
+        .title {
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            opacity: .55;
+            display: block;
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+        
+    }
+
+    .carousel__navigation {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+        button {
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            svg {
+                height: 18px;
+            }
+        }
+    }
+
+    .clip {
+        max-width: 280px;
+        &__image {
+            max-width: inherit;
+            height: 180px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid #fff;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__title {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 19px;
+            margin-bottom: 10px;
+        }
+
+        &__duration {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            opacity: .6;
+            .ico {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 18px;
+                width: 18px;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                svg {
+                    height: 10px;
+                }
+            }
+            .time {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .headline {
+        position: relative;
+        top: 38px;
+
+        .label {
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #F44336;
+        }
+
+        .title {
+            padding-right: 180px;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 36px;
+            margin-bottom: 18px;
+        }
+
+        .clip__info {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            .ico {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 38px;
+                width: 38px;
+                color: #fff;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                opacity: .6;
+                svg {
+                    height: 20px;
+                }
+            }
+            .content {
+                span {
+                    display: block;
+                    font-size: 13px;
+                    font-weight: 600;
+                }
+                .time {
+                    margin-top: 5px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    opacity: .6;
+                } 
+            }
+        }
+    }
+
+    .carousel__images {
+        height: inherit;
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 250px;
+            background: linear-gradient(90deg, #131313, transparent);
+        }
+		&:after {
+			content: "";
+            position: absolute;
+			background: #131313;
+			opacity: 0.3;
+            width: 100%;
+            height: 100%;
+			mix-blend-mode: multiply;
+            left: 0;
+		}
+    }
+}

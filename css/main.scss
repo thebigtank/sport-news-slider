@@ -29,13 +29,15 @@ $font-poppins: 'Poppins', sans-serif;
 
     .col {
         flex: 1;
+        width: 600px;
         &.dual {
             display: flex;
             gap: 40px;
-            width: 600px;
         }
 
         &.single {
+            position: relative;
+            z-index: 9;
             padding-left: 40px;
         }
         
@@ -61,6 +63,8 @@ $font-poppins: 'Poppins', sans-serif;
     }
 
     .carousel__navigation {
+        position: relative;
+        z-index: 99;
         display: flex;
         gap: 12px;
         justify-content: flex-end;
@@ -123,8 +127,8 @@ $font-poppins: 'Poppins', sans-serif;
     }
 
     .headline {
-        position: relative;
-        top: 38px;
+        width: 600px;
+        padding-top: 50px;
 
         .label {
             display: inline-block;
@@ -178,6 +182,7 @@ $font-poppins: 'Poppins', sans-serif;
     }
 
     .carousel__images {
+        max-width: 50%;
         height: inherit;
         position: absolute;
         top: 0;
@@ -191,6 +196,7 @@ $font-poppins: 'Poppins', sans-serif;
         &::before {
             content: '';
             position: absolute;
+            z-index: 2;
             height: 100%;
             width: 250px;
             background: linear-gradient(90deg, #131313, transparent);
@@ -205,5 +211,25 @@ $font-poppins: 'Poppins', sans-serif;
 			mix-blend-mode: multiply;
             left: 0;
 		}
+    }
+}
+
+
+// reset the slider navigations
+
+.swiper-button-prev, .swiper-button-next {
+    position: initial;
+    top: initial;
+    width: initial;
+    height: initial;
+    margin-top: initial;
+    z-index: initial;
+    cursor: initial;
+    display: initial;
+    align-items: initial;
+    justify-content: initial;
+
+    &::after, &::before {
+        display: none;
     }
 }

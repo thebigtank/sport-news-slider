@@ -22,13 +22,15 @@
 }
 .block.carousel .col {
   flex: 1;
+  width: 600px;
 }
 .block.carousel .col.dual {
   display: flex;
   gap: 40px;
-  width: 600px;
 }
 .block.carousel .col.single {
+  position: relative;
+  z-index: 9;
   padding-left: 40px;
 }
 .block.carousel .carousel__header .title {
@@ -46,6 +48,8 @@
   text-transform: uppercase;
 }
 .block.carousel .carousel__navigation {
+  position: relative;
+  z-index: 99;
   display: flex;
   gap: 12px;
   justify-content: flex-end;
@@ -104,8 +108,8 @@
   font-size: 12px;
 }
 .block.carousel .headline {
-  position: relative;
-  top: 38px;
+  width: 600px;
+  padding-top: 50px;
 }
 .block.carousel .headline .label {
   display: inline-block;
@@ -153,6 +157,7 @@
   opacity: 0.6;
 }
 .block.carousel .carousel__images {
+  max-width: 50%;
   height: inherit;
   position: absolute;
   top: 0;
@@ -166,6 +171,7 @@
 .block.carousel .carousel__images::before {
   content: "";
   position: absolute;
+  z-index: 2;
   height: 100%;
   width: 250px;
   background: linear-gradient(90deg, #131313, transparent);
@@ -179,4 +185,20 @@
   height: 100%;
   mix-blend-mode: multiply;
   left: 0;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  position: initial;
+  top: initial;
+  width: initial;
+  height: initial;
+  margin-top: initial;
+  z-index: initial;
+  cursor: initial;
+  display: initial;
+  align-items: initial;
+  justify-content: initial;
+}
+.swiper-button-prev::after, .swiper-button-prev::before, .swiper-button-next::after, .swiper-button-next::before {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
